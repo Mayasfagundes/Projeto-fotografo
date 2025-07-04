@@ -1,0 +1,97 @@
+@import url(./reset.css);
+@import url(./cabecalho.css);
+@import url(./projetos.css);
+@import url(./rodape.css);
+@import url(./sobre.css);
+@import url(./home.css);
+@import url(./contato.css);
+
+/* Variáveis globais de cor e fonte */
+:root {
+    --fundo-principal: #F5F5F5;
+    --branco: #ffffff;
+    --preto: #000000;
+    --cinza: #D9D9D9;
+    --cinza-escuro: #333333;
+    --cinza-medio: #BDBDBD;
+    --cor-fundo-cabecalho: #0A2A0A;
+    --fonte-principal: "Playfair Display", serif;
+    --fonte-secundaria: "Nunito", sans-serif;
+    --font-pequena: "Roboto", sans-serif;
+}
+
+/* Estilos globais para body e html */
+body {
+    background-color: var(--fundo-principal);
+    font-family: var(--fonte-secundaria);
+    color: #777;
+    margin: 0;
+    height: 100%;
+}
+
+html {
+    font: 16px "lato", sans-serif; 
+    color: #777;
+    height: 100%;
+}
+
+/* Efeito de zoom para a imagem no overlay */
+.overlay img.zoomed {
+    transform: scale(1.05); /* Um zoom mais sutil para o overlay */
+}
+
+.parallax-section {
+    height: 100vh; 
+    width: 100%; 
+    position: relative;
+    overflow: hidden;
+    
+    /* Propriedades do efeito parallax */
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.parallax-title {
+    color: var(--branco); 
+    background-color: rgba(17, 17, 17, 0.7);
+    border-radius: 1rem;
+    padding: 1rem 1.5rem; 
+    font-size: 30px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-family: var(--fonte-principal);
+    text-align: center;
+    
+   
+    position: absolute; 
+    left: 50%;
+    top: 50%;  
+    transform: translate(-50%, -50%);
+    width: fit-content;
+    max-width: 35%;
+    line-height: 1.3;
+}
+
+
+.about-hero {
+    background-image: url(../img/PARALLAX4.png); 
+}
+
+.projects-hero { 
+    background-image: url(../img/PARALLAX5.png);
+}
+
+
+/* --- MEDIA QUERY PARA RESPONSIVIDADE --- */
+@media screen and (max-width: 768px) {
+     .parallax-title {
+        font-size: clamp(1rem, 4vw, 1.5rem);
+        padding: 0.8rem 1rem;
+        max-width: 90%;
+    }
+
+    .parallax-section {
+        background-attachment: scroll; 
+    }
+}

@@ -1,0 +1,99 @@
+body {
+  margin: 0; /* Garante que não haja margens padrão no corpo da página */
+}
+
+.header-container {
+  background-color:var(--branco);
+  opacity: .8;
+  font-family: var(--font-pequena);
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: .8rem;
+  width: 100%;
+  z-index: 999;
+  box-sizing: border-box; /* Garante que o padding não afete a largura total */
+}
+
+.header__nav {
+  align-items: center;
+  text-align: center;
+}
+
+.nav__list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav__item {
+  padding-left: 2rem;
+}
+
+.nav__link {
+  text-decoration: none;
+  color: var(--branco);
+  font-weight: 700;
+  padding: 0.5rem; /* Adicionado padding base para o hover funcionar melhor */
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+.header__nav .nav__link:hover {
+  background-color: var(--cinza-escuro);
+  font-weight: bolder;
+  color: aliceblue;
+}
+
+
+.header__nav--mobile {
+  display: none;
+}
+
+/* ===================================================
+   MEDIA QUERY PARA TELAS MENORES (ATÉ 768px)
+   =================================================== */
+
+@media screen and (max-width: 768px) {
+  .header__nav {
+    display: none;
+  }
+
+  .header-container {
+    top: auto;
+    bottom: 0;
+    background-color: var(--cinza-medio);
+    opacity: 0.95;
+  }
+
+  .header__nav--mobile {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .nav__list--mobile {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .nav__icon--mobile {
+    width: 35px;
+    margin: 0 1rem;
+    transition: transform 0.2s ease;
+  }
+
+  .nav__icon--mobile:hover {
+    transform: scale(1.15); /* Aumentado um pouco o efeito */
+  }
+}

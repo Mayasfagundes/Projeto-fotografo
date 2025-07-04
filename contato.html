@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato | Design Atraente</title>
+    <meta name="description" content="Entre em contato com Adam Sandler para agendar sessões de fotos, eventos ou discutir colaborações fotográficas.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400&family=Playfair+Display:wght@500;700&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css/estilo.css">
+    
+</head>
+<body>
+
+  <header class="site-header" id="site-header">
+    <div class="header-container">
+  
+      <nav class="header__nav" aria-label="Navegação principal">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="home.html" class="nav__link">HOME</a></li>
+          <li class="nav__item"><a href="sobre.html" class="nav__link">SOBRE MIM</a></li>
+          <li class="nav__item"><a href="projeto.html" class="nav__link">PROJETO</a></li>
+          <li class="nav__item"><a href="contato.html" class="nav__link">CONTATOS</a></li>
+        </ul>
+      </nav>
+  
+      <nav class="header__nav--mobile" aria-label="Navegação móvel">
+        <ul class="nav__list--mobile">
+          <li class="nav__item--mobile"><a href="home.html"><img src="./img/icone-home.svg" alt="menu home" class="nav__icon--mobile"></a></li>
+          <li class="nav__item--mobile"><a href="sobre.html"><img src="./img/icone-pessoa.svg" alt="menu sobre" class="nav__icon--mobile"></a></li>
+          <li class="nav__item--mobile"><a href="projeto.html"><img src="./img/icone_ideia.svg" alt="menu projeto" class="nav__icon--mobile"></a></li>
+          <li class="nav__item--mobile"><a href="contato.html"><img src="./img/icone-galeria.svg" alt="menu contato" class="nav__icon--mobile"></a></li>
+        </ul>
+      </nav>
+  
+    </div>
+  </header>
+
+  <main class="contact-page">
+    <div class="contact-page__visuals">
+      <div id="orb-one" class="visuals__shape"></div>
+      <div id="orb-two" class="visuals__shape"></div>
+      <div id="orb-three" class="visuals__shape"></div>
+      <div id="orb-four" class="visuals__shape"></div>
+    </div>
+
+    <section class="contact-form__container" aria-live="polite">
+
+      <div id="form-wrapper">
+          <h1 id="form-title" class="form__title">Fale Comigo</h1>
+          <form id="contact-form" class="form" novalidate>
+              <div class="form__group">
+                  <input type="text" class="form__control" id="name" name="name" placeholder=" " required>
+                  <label for="name" class="form__label">Seu nome completo</label>
+                  <div class="form__feedback--invalid">Por favor, insira seu nome.</div>
+              </div>
+              <div class="form__group">
+                  <input type="email" class="form__control" id="email" name="email" placeholder=" " required>
+                  <label for="email" class="form__label">Seu melhor e-mail</label>
+                  <div class="form__feedback--invalid">Por favor, insira um e-mail válido.</div>
+              </div>
+              <div class="form__group">
+                  <textarea class="form__control" id="message" name="message" rows="5" placeholder=" " required></textarea>
+                  <label for="message" class="form__label">Sua mensagem</label>
+                  <div class="form__feedback--invalid">Por favor, escreva uma mensagem.</div>
+              </div>
+              <button type="submit" class="form__submit-btn">ENVIAR MENSAGEM</button>
+          </form>
+      </div>
+  
+      <div id="success-wrapper" class="is-hidden" style="text-align: center;">
+          <h2 class="form__title">Obrigado!</h2>
+          <p>Sua mensagem foi enviada. Responderei em breve.</p>
+          <div class="social-links">
+              <p>Enquanto isso, acompanhe nas redes sociais:</p>
+              
+          </div>
+          <button class="form__reset-btn" id="reset-form-btn">Enviar Nova Mensagem</button>
+          <button class="form__close-btn" id="close-form-btn">Fechar</button>
+      </div>
+  
+  </section>
+  </main>
+
+  <footer class="site-footer">
+    © 2025 Mayara Fagundes 
+  </footer>
+
+  <script src="js/formulario.js"></script>
+</body>
+</html>

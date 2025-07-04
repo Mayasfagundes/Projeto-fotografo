@@ -1,0 +1,235 @@
+/* --- Seção de Introdução dos Projetos --- */
+.projects-intro {
+  max-width: 800px;
+  margin: 4rem auto 3rem auto;
+  text-align: center;
+  padding: 0 1.5rem;
+}
+
+.projects-intro__title {
+  font-family: var(--fonte-principal), serif;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  color: var(--cinza-escuro);
+  margin-bottom: 1rem;
+}
+
+.projects-intro__text {
+  font-family: var(--fonte-secundaria), sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+/* --- Container e Grid da Galeria --- */
+.gallery-container {
+  background-color: var(--fundo-principal);
+  padding: 3rem 0;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: minmax(280px, auto);
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* --- Itens da Galeria --- */
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.8rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-item__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* --- Legendas --- */
+.gallery-item__caption {
+  padding: 1rem;
+  background-color: var(--branco);
+  color: var(--preto);
+  font-family: var(--font-pequena), sans-serif;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* Legenda com sobreposição (para carrosséis) */
+.gallery-item__caption--overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  color: var(--branco);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  z-index: 2;
+}
+
+.overlay__title {
+  font-family: var(--fonte-principal), serif;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.overlay__text {
+  font-family: var(--fonte-secundaria), sans-serif;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  margin-bottom: 1rem;
+}
+
+/* --- Carrossel Interno --- */
+.carousel__inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel__slide {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  filter: brightness(0.6); /* Escurece a imagem para o texto sobressair */
+}
+
+.carousel__slide--active {
+  opacity: 1;
+}
+
+.carousel__nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.4);
+  color: var(--branco);
+  border: none;
+  cursor: pointer;
+  z-index: 4;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s ease;
+}
+
+.carousel__nav-btn:hover {
+  opacity: 1;
+}
+
+.carousel__nav-btn--prev {
+  left: 1rem;
+}
+.carousel__nav-btn--prev::before {
+  content: '<';
+}
+
+.carousel__nav-btn--next {
+  right: 1rem;
+}
+.carousel__nav-btn--next::before {
+  content: '>';
+}
+
+/* --- Layout Específico do Grid (Masonry) --- */
+.gallery-item:nth-child(1) {
+  grid-column: span 2;
+  grid-row: span 2;
+  min-height: 500px;
+}
+
+.gallery-item:nth-child(3) {
+  grid-column: 3;
+  grid-row: span 2;
+  min-height: 500px;
+}
+
+.gallery-item:nth-child(4) {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+.gallery-item:nth-child(5) {
+  grid-column: 2;
+  grid-row: 3;
+}
+
+/* --- Lightbox (Overlay de Imagem Ampliada) --- */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.overlay.active {
+  display: flex;
+}
+
+.overlay__img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 0.5rem;
+}
+
+.overlay__close-btn {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: white;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+/* --- Responsividade --- */
+@media screen and (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: minmax(250px, auto);
+  }
+
+  /* Reseta os itens grandes para o layout de uma coluna */
+  .gallery-item:nth-child(1),
+  .gallery-item:nth-child(3),
+  .gallery-item:nth-child(4),
+  .gallery-item:nth-child(5) {
+    grid-column: span 1;
+    grid-row: span 1;
+    min-height: 300px;
+  }
+}

@@ -1,0 +1,94 @@
+/* --- Seção de Conteúdo (Filosofia e Vídeo) --- */
+.about-content {
+    padding: 4rem 1.5rem;
+}
+
+.about-content__title {
+    font-family: var(--fonte-principal), serif;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    line-height: 1.2;
+    margin-bottom: 3rem;
+    color: var(--cinza-escuro);
+    text-align: center;
+}
+
+.about-content__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.about-content__video {
+    width: 100%;
+    height: auto;
+    border-radius: 0.8rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.about-content__video:hover {
+    transform: scale(1.03);
+}
+
+.about-content__text {
+    text-align: justify;
+    font-family: var(--fonte-secundaria);
+    font-size: clamp(1rem, 2.5vw, 1.1rem);
+    line-height: 1.8;
+    color: #444;
+}
+
+/* --- Seção Galeria Pessoal (Estilo Original Restaurado) --- */
+.gallery-section {
+    background-color: var(--fundo-principal);
+    padding: 5rem 0;
+    text-align: center;
+}
+
+.gallery-section__title {
+    font-family: var(--fonte-principal), serif;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    color: var(--cinza-escuro);
+    margin-bottom: 3rem;
+}
+
+.gallery-section__grid {
+    display: flex;
+    flex-direction: grid; /* Organiza as fotos em uma coluna */
+    gap: 1.5rem; /* Espaçamento entre as fotos */
+    max-width: 400px; /* Limita a largura da coluna de fotos */
+    margin: 0 6rem;
+}
+
+.gallery-section__item {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 0.8rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-section__item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+/* --- Media Query para Responsividade --- */
+@media screen and (max-width: 768px) {
+    .about-content__container {
+        grid-template-columns: 1fr;
+    }
+
+    .about-content__text {
+        text-align: center;
+    }
+
+    .gallery-section__grid {
+        /* Ajusta as margens em telas menores */
+        margin: 0 1.5rem; 
+    }
+}
