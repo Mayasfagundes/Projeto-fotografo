@@ -3,7 +3,6 @@
         display: flex;
         justify-content: space-around;
         background-color: #0A2A0A;
-        padding-bottom: 1rem;
         padding-top: 0.5rem;
         border-top: 1px solid ;
     }
@@ -14,7 +13,7 @@
             display: flex;
             justify-content: space-around;
             background-color: #0A2A0A;
-            padding-bottom: 6rem;
+            padding-bottom: 5rem;
             padding-top: 0.5rem;
     
     
